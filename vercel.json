@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "functions": {
+    "*.php":     { "runtime": "vercel-php@0.7.2" },
+    "api/*.php": { "runtime": "vercel-php@0.7.2" }
+  },
+  "routes": [
+    { "src": "/(config|vendor|database|tests|scripts|partials)(/.*)?", "status": 403 },
+    { "src": "/api/_[^/]+(\\.[^/]+)?$", "status": 403 },
+    { "src": "/\\.env(\\.example)?$", "status": 403 },
+    { "src": "/(composer\\.(json|lock)|\\.gitignore|README\\.md)$", "status": 403 },
+    { "handle": "filesystem" },
+    { "src": "^/([a-zA-Z0-9_-]+)/?$", "dest": "/$1.php" }
+  ]
+}

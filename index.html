@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/css/tailwind-login.css?v=20260327" />
+    <link rel="stylesheet" href="./assets/css/style.css?v=20260313-login-clean" />
+  </head>
+
+  <body class="box-border h-dvh overflow-hidden px-3 py-3 sm:px-4 sm:py-4 md:px-5 md:py-5">
+    <main class="mx-auto grid h-full min-h-0 w-full max-w-5xl grid-rows-[auto_minmax(0,1fr)]">
+      <div class="login-top-actions mb-2 flex justify-end md:mb-3">
+        <button id="themeToggle" type="button" class="header-icon-btn" aria-label="Toggle color mode">
+          <svg
+            id="iconThemeSun"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="hidden fill-none stroke-current"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <svg
+            id="iconThemeMoon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="fill-none stroke-current"
+            aria-hidden="true"
+          >
+            <path d="M12 3a7 7 0 1 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <section class="login-shell mx-auto h-full min-h-0 w-full overflow-hidden rounded-[2rem] shadow-card">
+        <div class="grid h-full md:grid-cols-[0.92fr_1.08fr]">
+          <aside class="photo-panel hidden items-end justify-center p-5 md:flex md:min-h-full md:p-7 lg:p-8">
+            <div class="photo-standin reveal">
+              <img id="profileImage" class="profile-image hidden" src="" alt="Profile photo" />
+              <span id="profileFallback" class="photo-fallback hidden" aria-hidden="true"></span>
+            </div>
+          </aside>
+
+          <div class="flex items-center p-4 sm:p-6 md:p-7 lg:p-8">
+            <form id="loginForm" class="mx-auto w-full max-w-lg" autocomplete="on" novalidate>
+              <div class="reveal text-center">
+                <div class="mx-auto mb-3 flex h-16 w-16 items-center justify-center sm:mb-4 sm:h-20 sm:w-20">
+                  <div class="logo-badge flex items-center justify-center">
+                    <img id="logoImage" class="logo-image hidden" src="" alt="Logo" />
+                    <svg
+                      id="logoFallback"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      class="h-10 w-10 fill-none stroke-current stroke-[1.8] sm:h-12 sm:w-12"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="8" r="3.8"></circle>
+                      <path d="M4 20a8 8 0 0 1 16 0"></path>
+                    </svg>
+                  </div>
+                </div>
+                <h2 class="font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Login</h2>
+              </div>
+
+              <div class="mt-5 sm:mt-7">
+                <div id="credentialsStep" class="space-y-4 sm:space-y-5">
+                  <div class="reveal reveal-delay-1">
+                    <div id="emailField" class="field-wrapper floating-field flex items-center">
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        class="field-input floating-input"
+                        placeholder=" "
+                        aria-describedby="emailError"
+                        aria-invalid="false"
+                        required
+                      />
+                      <label for="email" class="floating-label">Email</label>
+                    </div>
+
+                    <p id="emailError" class="field-error hidden" role="alert">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current stroke-2" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <path d="M12 8v5"></path>
+                        <path d="M12 16.5v.5"></path>
+                      </svg>
+                      <span>Enter your email</span>
+                    </p>
+                  </div>
+
+                  <div class="reveal reveal-delay-2">
+                    <div id="passwordField" class="field-wrapper floating-field flex items-center">
+                      <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        class="field-input floating-input"
+                        placeholder=" "
+                        aria-describedby="passwordError"
+                        aria-invalid="false"
+                        required
+                      />
+                      <label for="password" class="floating-label">Password</label>
+
+                      <button
+                        id="passwordToggle"
+                        type="button"
+                        class="eye-btn mr-2 grid h-10 w-10 place-items-center rounded-full text-black/85 sm:h-12 sm:w-12"
+                        aria-label="Show password"
+                      >
+                        <svg id="iconEye" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-7 w-7 fill-current sm:h-8 sm:w-8">
+                          <path
+                            d="M12 5c5.5 0 9.9 4.4 11 6.7-1.1 2.2-5.5 6.6-11 6.6-5.4 0-9.8-4.3-11-6.6C2.2 9.4 6.6 5 12 5Zm0 2.3c-2.4 0-4.3 1.9-4.3 4.3S9.6 16 12 16s4.3-1.9 4.3-4.3S14.4 7.3 12 7.3Zm0 2a2.3 2.3 0 1 1 0 4.7 2.3 2.3 0 0 1 0-4.6Z"
+                          />
+                        </svg>
+
+                        <svg
+                          id="iconEyeOff"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          class="hidden h-7 w-7 fill-current sm:h-8 sm:w-8"
+                        >
+                          <path
+                            d="m2.6 1.2 20.2 20.2-1.4 1.4-4-4A12.6 12.6 0 0 1 12 20c-5.3 0-9.8-4.2-11-6.5a14.2 14.2 0 0 1 4.2-4.8L1.2 2.6 2.6 1.2Zm4.2 8.4a8.8 8.8 0 0 0-3.5 3.8c1.2 2 5 5.4 8.7 5.4 1.2 0 2.3-.2 3.3-.6l-2.5-2.5a4.4 4.4 0 0 1-5.4-5.4l-.6-.7Zm5.5-4.4c5.3 0 9.8 4.2 11 6.5-.7 1.3-2.4 3.3-4.7 4.7l-1.4-1.4a8.9 8.9 0 0 0 3.6-3.8c-1.2-2-5-5.4-8.7-5.4-.9 0-1.8.1-2.7.4L7.9 4.7c1.3-.4 2.8-.6 4.4-.6Z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+
+                    <p id="passwordError" class="field-error hidden" role="alert">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current stroke-2" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <path d="M12 8v5"></path>
+                        <path d="M12 16.5v.5"></path>
+                      </svg>
+                      <span>Enter your password</span>
+                    </p>
+                  </div>
+
+                  <div class="reveal reveal-delay-3 pt-1">
+                    <button type="submit" class="action-btn w-full px-6 py-2.5 font-display text-3xl font-bold tracking-tight sm:py-3 sm:text-4xl">
+                      Login
+                    </button>
+                  </div>
+                </div>
+
+                <div id="otpStep" class="hidden space-y-4 sm:space-y-5">
+                  <p class="otp-lead">
+                    Enter the 6-digit OTP sent to
+                    <span id="otpEmailHint" class="otp-email"></span>
+                  </p>
+
+                  <div class="otp-row" role="group" aria-label="One-time password">
+                    <input class="otp-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="one-time-code" aria-label="OTP digit 1" />
+                    <input class="otp-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="one-time-code" aria-label="OTP digit 2" />
+                    <input class="otp-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="one-time-code" aria-label="OTP digit 3" />
+                    <input class="otp-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="one-time-code" aria-label="OTP digit 4" />
+                    <input class="otp-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="one-time-code" aria-label="OTP digit 5" />
+                    <input class="otp-input" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="1" autocomplete="one-time-code" aria-label="OTP digit 6" />
+                  </div>
+
+                  <div class="otp-actions">
+                    <button id="resendOtpButton" type="button" class="otp-link-button" disabled>Resend in 60s</button>
+                    <button id="changeCredentialsButton" type="button" class="otp-link-button">Use different email</button>
+                  </div>
+                </div>
+              </div>
+
+              <p id="formNote" class="mt-3 min-h-[1.25rem] text-center text-xs font-semibold sm:text-sm md:text-left"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="loadingModal" class="loading-modal hidden" role="status" aria-live="polite" aria-hidden="true">
+      <div class="loading-panel">
+        <div class="loading-spinner" aria-hidden="true">
+          <span class="loading-arc loading-arc-a"></span>
+          <span class="loading-arc loading-arc-b"></span>
+        </div>
+        <p class="loading-title">Please wait</p>
+        <p id="loadingMessage" class="loading-message">Processing your request...</p>
+      </div>
+    </div>
+
+    <script src="./assets/js/main.js?v=20260331-timeout"></script>
+  </body>
+</html>

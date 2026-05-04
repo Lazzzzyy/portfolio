@@ -1,0 +1,167 @@
+/* ── Analytics Page ──────────────────────────────────────────────────────── */
+
+.an-page-header {
+  margin-bottom: 1.5rem;
+}
+
+.an-page-title {
+  font-family: "Sora", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--card-text);
+  margin: 0 0 0.2rem;
+  line-height: 1.2;
+}
+
+.an-page-subtitle {
+  font-size: 0.82rem;
+  color: var(--card-subtext);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ── Summary Stats ───────────────────────────────────────────────────────── */
+
+.an-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.an-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  box-shadow: var(--card-shadow);
+}
+
+.an-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 0.6rem;
+  background: var(--stat-icon-bg);
+  color: var(--stat-icon-color);
+  flex-shrink: 0;
+}
+
+.an-stat-icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  stroke-width: 2;
+}
+
+.an-stat-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.an-stat-value {
+  font-family: "Sora", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--card-text);
+  line-height: 1.1;
+}
+
+.an-stat-label {
+  font-size: 0.75rem;
+  color: var(--card-subtext);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ── Chart Cards ─────────────────────────────────────────────────────────── */
+
+.an-chart-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  box-shadow: var(--card-shadow);
+  padding: 1.4rem 1.5rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.an-chart-card:last-child {
+  margin-bottom: 0;
+}
+
+.an-chart-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.an-chart-title {
+  font-family: "Sora", sans-serif;
+  font-size: 0.975rem;
+  font-weight: 700;
+  color: var(--card-text);
+  margin: 0 0 0.2rem;
+  line-height: 1.3;
+}
+
+.an-chart-subtitle {
+  font-size: 0.78rem;
+  color: var(--card-subtext);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ── Filter Select ───────────────────────────────────────────────────────── */
+
+.an-chart-filter {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0.4rem 2rem 0.4rem 0.75rem;
+  font-size: 0.8rem;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  color: var(--card-text);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.55rem center;
+  background-size: 1rem;
+  flex-shrink: 0;
+  transition: border-color 0.18s;
+}
+
+.an-chart-filter:hover,
+.an-chart-filter:focus {
+  border-color: var(--stat-icon-color);
+  outline: none;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .an-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .an-stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .an-chart-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

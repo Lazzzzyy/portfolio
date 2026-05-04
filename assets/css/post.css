@@ -1,0 +1,262 @@
+/* ── Post Page ───────────────────────────────────────────────────────────── */
+
+.post-page {
+  background: var(--body-bg);
+  min-height: 100dvh;
+  font-family: "Manrope", sans-serif;
+  color: var(--card-text);
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+
+.post-site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--card-border);
+  backdrop-filter: blur(10px);
+}
+
+.post-site-header-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.post-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--card-subtext);
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.post-back-link:hover {
+  color: var(--stat-icon-color);
+}
+
+.post-back-link svg {
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 2.5;
+}
+
+.post-theme-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 0.45rem;
+  border: 1px solid var(--card-border);
+  background: transparent;
+  cursor: pointer;
+  color: var(--card-subtext);
+  transition: all 0.18s;
+}
+
+.post-theme-btn:hover {
+  background: var(--stat-icon-bg);
+  color: var(--stat-icon-color);
+  border-color: var(--stat-icon-color);
+}
+
+.post-theme-btn svg {
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 2;
+}
+
+/* ── Main ───────────────────────────────────────────────────────────────── */
+
+.post-main {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+/* ── Cover ──────────────────────────────────────────────────────────────── */
+
+.post-cover-wrap {
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  border: 1px solid var(--card-border);
+}
+
+.post-cover {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Content ────────────────────────────────────────────────────────────── */
+
+.post-content-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.post-meta-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.post-category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--stat-icon-color);
+  background: var(--stat-icon-bg);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+}
+
+.post-date,
+.post-views {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--card-subtext);
+  font-weight: 500;
+}
+
+.post-date svg,
+.post-views svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.post-title {
+  font-family: "Sora", sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 800;
+  color: var(--card-text);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.post-excerpt {
+  font-size: 1.05rem;
+  color: var(--card-subtext);
+  line-height: 1.7;
+  margin: 0;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* ── Related Project Card ───────────────────────────────────────────────── */
+
+.post-project-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--stat-icon-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  align-items: center;
+}
+
+.post-project-thumb {
+  width: 72px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 0.45rem;
+  border: 1px solid var(--card-border);
+  flex-shrink: 0;
+}
+
+.post-project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.post-project-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--stat-icon-color);
+}
+
+.post-project-name {
+  font-family: "Sora", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--card-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.post-project-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.post-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--card-subtext);
+  text-decoration: none;
+  padding: 0.22rem 0.65rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--card-border);
+  transition: all 0.18s;
+  background: var(--card-bg);
+}
+
+.post-project-link:hover {
+  border-color: var(--stat-icon-color);
+  color: var(--stat-icon-color);
+  background: var(--card-bg);
+}
+
+.post-project-link svg {
+  width: 0.8rem;
+  height: 0.8rem;
+  stroke-width: 2;
+}
+
+/* ── Post Body ──────────────────────────────────────────────────────────── */
+
+.post-body {
+  font-size: 0.975rem;
+  line-height: 1.8;
+  color: var(--card-text);
+  padding-top: 0.5rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .post-main { padding: 1.5rem 1rem 3rem; }
+  .post-project-card { flex-direction: column; align-items: flex-start; }
+  .post-project-thumb { width: 100%; height: 120px; }
+}

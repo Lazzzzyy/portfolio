@@ -1,0 +1,617 @@
+/* ── Profile Page Layout ─────────────────────────────────────────────────── */
+
+.pf-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.pf-page-title {
+  font-family: "Sora", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--card-text);
+  margin: 0 0 0.2rem;
+  line-height: 1.2;
+}
+
+.pf-page-sub {
+  font-size: 0.82rem;
+  color: var(--card-subtext);
+  margin: 0;
+}
+
+.pf-preview-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.05rem;
+  background: transparent;
+  color: var(--stat-icon-color);
+  border: 1.5px solid var(--stat-icon-color);
+  border-radius: 0.55rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.pf-preview-btn:hover {
+  background: var(--stat-icon-color);
+  color: #fff;
+}
+
+.pf-preview-btn svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+/* ── Card ───────────────────────────────────────────────────────────────── */
+
+.pf-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.85rem;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+}
+
+.pf-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.pf-card-header svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  stroke-width: 2;
+  stroke: var(--stat-icon-color);
+  flex-shrink: 0;
+}
+
+.pf-card-title {
+  font-family: "Sora", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--card-text);
+  margin: 0;
+}
+
+.pf-card-body {
+  padding: 1.25rem;
+}
+
+/* ── Fields ─────────────────────────────────────────────────────────────── */
+
+.pf-fields-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pf-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.pf-field-group:last-child {
+  margin-bottom: 0;
+}
+
+.pf-field-group--grow {
+  flex: 1;
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.pf-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--card-text);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.pf-hint {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--card-subtext);
+}
+
+.pf-input {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  background: var(--toggle-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-family: "Manrope", sans-serif;
+  color: var(--card-text);
+  box-sizing: border-box;
+  transition: border-color 0.18s, box-shadow 0.18s;
+  outline: none;
+}
+
+.pf-input:focus {
+  border-color: var(--stat-icon-color);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.pf-input::placeholder {
+  color: var(--card-subtext);
+  opacity: 0.7;
+}
+
+.pf-textarea {
+  resize: vertical;
+  min-height: 90px;
+  line-height: 1.55;
+}
+
+/* ── Section note ───────────────────────────────────────────────────────── */
+
+.pf-section-note {
+  font-size: 0.78rem;
+  color: var(--card-subtext);
+  margin: 0 0 1.1rem;
+  line-height: 1.5;
+}
+
+/* ── Social grid ────────────────────────────────────────────────────────── */
+
+.pf-social-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.pf-social-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.85rem;
+}
+
+.pf-social-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  min-width: 2.4rem;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.35rem;
+}
+
+.pf-social-icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.pf-social-icon--gmail    { background: #fce8e6; color: #ea4335; }
+.pf-social-icon--github   { background: #f3f3f3; color: #24292e; }
+.pf-social-icon--linkedin { background: #e8f0fe; color: #0a66c2; }
+.pf-social-icon--facebook { background: #e7f0fb; color: #1877f2; }
+.pf-social-icon--instagram{ background: #fce4ec; color: #e1306c; }
+.pf-social-icon--twitter  { background: #f5f5f5; color: #000; }
+.pf-social-icon--telegram { background: #e3f2fd; color: #229ed9; }
+.pf-social-icon--discord  { background: #eef0ff; color: #5865f2; }
+.pf-social-icon--viber    { background: #f3e5f5; color: #7360f2; }
+.pf-social-icon--whatsapp { background: #e8f5e9; color: #25d366; }
+
+[data-theme="dark"] .pf-social-icon--gmail    { background: rgba(234,67,53,.18);  color: #f28b82; }
+[data-theme="dark"] .pf-social-icon--github   { background: rgba(255,255,255,.08); color: #e0e0e0; }
+[data-theme="dark"] .pf-social-icon--linkedin { background: rgba(10,102,194,.18); color: #7ab4f5; }
+[data-theme="dark"] .pf-social-icon--facebook { background: rgba(24,119,242,.18); color: #74a7f5; }
+[data-theme="dark"] .pf-social-icon--instagram{ background: rgba(225,48,108,.18);  color: #f06292; }
+[data-theme="dark"] .pf-social-icon--twitter  { background: rgba(255,255,255,.08); color: #e0e0e0; }
+[data-theme="dark"] .pf-social-icon--telegram { background: rgba(34,158,217,.18);  color: #64b5f6; }
+[data-theme="dark"] .pf-social-icon--discord  { background: rgba(88,101,242,.18);  color: #9fa8da; }
+[data-theme="dark"] .pf-social-icon--viber    { background: rgba(115,96,242,.18);  color: #ce93d8; }
+[data-theme="dark"] .pf-social-icon--whatsapp { background: rgba(37,211,102,.18);  color: #69f0ae; }
+
+/* ── Phone carrier dot ──────────────────────────────────────────────────── */
+
+.pf-carrier-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  flex-shrink: 0;
+}
+
+/* ── Save button ────────────────────────────────────────────────────────── */
+
+.pf-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--card-border);
+  margin-top: 0.25rem;
+}
+
+.pf-save-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1.15rem;
+  background: var(--stat-icon-color);
+  color: #fff;
+  border: none;
+  border-radius: 0.55rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+  transition: opacity 0.18s;
+}
+
+.pf-save-btn:hover:not(:disabled) { opacity: 0.85; }
+.pf-save-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.pf-save-btn svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.pf-save-btn--loading svg {
+  animation: pf-spin 0.8s linear infinite;
+}
+
+@keyframes pf-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── CV tab switcher ────────────────────────────────────────────────────────── */
+
+.pf-cv-tabs {
+  display: flex;
+  gap: 0.35rem;
+  margin-bottom: 0.65rem;
+}
+
+.pf-cv-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--toggle-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: "Manrope", sans-serif;
+  color: var(--card-subtext);
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+
+.pf-cv-tab svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.pf-cv-tab--active {
+  background: var(--stat-icon-color);
+  border-color: var(--stat-icon-color);
+  color: #fff;
+}
+
+.pf-cv-tab:not(.pf-cv-tab--active):hover {
+  background: var(--card-border);
+  color: var(--card-text);
+}
+
+/* ── CV drop zone ───────────────────────────────────────────────────────────── */
+
+.pf-hint--block {
+  display: block;
+  margin-top: 0.4rem;
+}
+
+.pf-cv-drop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 1.5rem 1rem;
+  border: 2px dashed var(--card-border);
+  border-radius: 0.65rem;
+  background: var(--toggle-bg);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.18s, background 0.18s;
+}
+
+.pf-cv-drop:hover,
+.pf-cv-drop--over {
+  border-color: var(--stat-icon-color);
+  background: color-mix(in srgb, var(--stat-icon-color) 6%, transparent);
+}
+
+.pf-cv-drop svg {
+  width: 2rem;
+  height: 2rem;
+  stroke-width: 1.5;
+  stroke: var(--stat-icon-color);
+  margin-bottom: 0.25rem;
+}
+
+.pf-cv-drop-text {
+  font-size: 0.875rem;
+  color: var(--card-text);
+}
+
+.pf-cv-browse {
+  color: var(--stat-icon-color);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.pf-cv-drop input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── CV upload status ───────────────────────────────────────────────────────── */
+
+.pf-cv-upload-status {
+  margin-top: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: "Manrope", sans-serif;
+}
+
+.pf-cv-upload-status--info    { background: var(--toggle-bg); color: var(--card-subtext); }
+.pf-cv-upload-status--success { background: color-mix(in srgb, var(--stat-icon-color) 15%, transparent); color: var(--stat-icon-color); }
+.pf-cv-upload-status--error   { background: color-mix(in srgb, var(--error) 15%, transparent); color: var(--error); }
+
+/* ── Remove CV button ───────────────────────────────────────────────────────── */
+
+.pf-cv-remove-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.65rem;
+  padding: 0.4rem 0.85rem;
+  background: transparent;
+  border: 1.5px solid var(--error);
+  border-radius: 0.45rem;
+  color: var(--error);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: "Manrope", sans-serif;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.pf-cv-remove-btn:hover:not(:disabled) {
+  background: var(--error);
+  color: #fff;
+}
+
+.pf-cv-remove-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.pf-cv-remove-btn svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+/* ── Confirmation modal ─────────────────────────────────────────────────── */
+
+.pf-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  animation: pfOverlayIn 0.18s ease;
+}
+
+.pf-modal-overlay--hidden {
+  display: none;
+}
+
+.pf-modal-overlay--closing {
+  animation: pfOverlayOut 0.18s ease forwards;
+}
+
+@keyframes pfOverlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pfOverlayOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.pf-modal {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.85rem;
+  width: min(92vw, 420px);
+  padding: 1.4rem 1.5rem 1.25rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  animation: pfModalIn 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pf-modal-overlay--closing .pf-modal {
+  animation: pfModalOut 0.16s ease forwards;
+}
+
+@keyframes pfModalIn {
+  from { transform: translateY(12px) scale(0.97); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+@keyframes pfModalOut {
+  from { transform: none; opacity: 1; }
+  to   { transform: translateY(8px) scale(0.97); opacity: 0; }
+}
+
+.pf-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.pf-modal-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--card-title);
+  margin: 0;
+}
+
+.pf-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: none;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: var(--card-subtext);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.pf-modal-close:hover {
+  background: var(--toggle-bg);
+  color: var(--card-title);
+}
+
+.pf-modal-close svg {
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 2;
+}
+
+.pf-modal-msg {
+  font-size: 0.875rem;
+  color: var(--card-subtext);
+  line-height: 1.55;
+  margin: 0 0 1.2rem;
+}
+
+.pf-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}
+
+.pf-modal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: 0.45rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  font-family: "Manrope", sans-serif;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.pf-modal-btn--secondary {
+  background: var(--toggle-bg);
+  color: var(--card-subtext);
+  border-color: var(--card-border);
+}
+
+.pf-modal-btn--secondary:hover {
+  background: var(--card-border);
+  color: var(--card-title);
+}
+
+.pf-modal-btn--danger {
+  background: transparent;
+  color: var(--error);
+  border-color: var(--error);
+}
+
+.pf-modal-btn--danger:hover:not(:disabled) {
+  background: var(--error);
+  color: #fff;
+}
+
+.pf-modal-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.pf-modal-btn svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+/* ── Toast ──────────────────────────────────────────────────────────────── */
+
+.pf-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  padding: 0.7rem 1.1rem;
+  border-radius: 0.6rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: "Manrope", sans-serif;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: opacity 0.22s, transform 0.22s;
+  max-width: 320px;
+}
+
+.pf-toast.pf-toast--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pf-toast--success { background: var(--stat-icon-color); color: #fff; }
+.pf-toast--error   { background: var(--error);           color: #fff; }

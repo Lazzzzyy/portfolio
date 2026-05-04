@@ -1,0 +1,67 @@
+# ============================================================
+#  Portfolio — Apache .htaccess
+# ============================================================
+#  Minimal config for InfinityFree shared hosting.
+#  Performance headers (caching, gzip) can be re-added once
+#  the site is confirmed working.
+#
+#  LOCAL DEV (Laragon at /portfolio/):
+#    Change RewriteBase to /portfolio/
+#    Change the clean-URL RewriteCond URI pattern to:
+#      ^/portfolio/([a-zA-Z0-9_-]+)/?$
+#    Change the file-exists check to:
+#      %{DOCUMENT_ROOT}/portfolio/%1.php
+# ============================================================
+
+AddDefaultCharset UTF-8
+
+# ── Rewrite engine ───────────────────────────────────────────────────────────
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Block internal API helpers (underscore-prefixed files)
+  RewriteRule ^api/_[^/]+ - [F,L]
+
+  # Block direct access to private directories
+  RewriteRule ^(config|vendor|database|tests|scripts|partials)(/|$) - [F,L]
+
+  # /index → index.html (admin login)
+  RewriteRule ^index/?$ index.html [L]
+
+  # Clean URLs: /page → page.php (only if the .php file exists)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} ^/([a-zA-Z0-9_-]+)/?$
+  RewriteCond %{DOCUMENT_ROOT}/%1.php -f
+  RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.php [L,QSA]
+</IfModule>
+
+# ── Block sensitive files ─────────────────────────────────────────────────────
+<Files .env>
+  Require all denied
+</Files>
+
+<Files .env.example>
+  Require all denied
+</Files>
+
+<Files .gitignore>
+  Require all denied
+</Files>
+
+<Files composer.json>
+  Require all denied
+</Files>
+
+<Files composer.lock>
+  Require all denied
+</Files>
+
+<Files README.md>
+  Require all denied
+</Files>
+
+<Files setup.php>
+  Require all denied
+</Files>

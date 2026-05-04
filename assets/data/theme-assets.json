@@ -1,0 +1,7 @@
+{
+  "logo": "./assets/images/logo.png",
+  "profile": {
+    "light": "./assets/images/profile-light.png",
+    "dark": "./assets/images/profile-dark.png"
+  }
+}
