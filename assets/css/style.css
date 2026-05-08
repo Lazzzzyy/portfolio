@@ -795,6 +795,10 @@ button.settings-dropdown__item {
   backdrop-filter: blur(6px);
 }
 
+.loading-modal.hidden {
+  display: none;
+}
+
 [data-theme="dark"] .loading-modal {
   background: rgba(5, 8, 2, 0.5);
 }
