@@ -1,7 +1,10 @@
 {
   "version": 2,
   "functions": {
-    "api/**/*.php": { "runtime": "vercel-php@0.7.2" }
+    "api/**/*.php": {
+      "runtime": "vercel-php@0.7.2",
+      "includeFiles": "{config/**,partials/**,*.php,api/_*.php}"
+    }
   },
   "routes": [
     { "src": "/(config|vendor|database|tests|scripts|partials)(/.*)?", "status": 403 },
