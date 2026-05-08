@@ -236,7 +236,7 @@ function send_otp_email(string $recipientEmail, string $recipientName, string $o
             $mailer->SMTPAuth          = true;
             $mailer->Username          = $smtpUser;
             $mailer->Password          = $smtpPass;
-            $mailer->SMTPConnectTimeout = 5;
+            $mailer->Timeout = 5;
 
             if ($smtpEncryption === 'ssl') {
                 $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
