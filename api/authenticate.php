@@ -72,7 +72,7 @@ try {
         json_response(200, [
             'success'  => true,
             'message'  => 'Login successful. Redirecting...',
-            'redirect' => './dashboard.php',
+            'redirect' => './dashboard',
         ]);
     }
 

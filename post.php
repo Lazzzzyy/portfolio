@@ -7,7 +7,7 @@ require_once './config/database.php';
 $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 
 if ($id <= 0) {
-    header('Location: ./visitor.php');
+    header('Location: ./visitor');
     exit;
 }
 
@@ -24,7 +24,7 @@ try {
     $post = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if (!$post) {
-        header('Location: ./visitor.php');
+        header('Location: ./visitor');
         exit;
     }
 
@@ -32,7 +32,7 @@ try {
     $pdo->prepare('UPDATE blog_posts SET views = views + 1 WHERE id = ?')->execute([$id]);
 
 } catch (\Exception $e) {
-    header('Location: ./visitor.php');
+    header('Location: ./visitor');
     exit;
 }
 
@@ -63,7 +63,7 @@ $cover   = htmlspecialchars($post['thumbnail_url'] ?? '', ENT_QUOTES, 'UTF-8');
 
     <header class="post-site-header">
       <div class="post-site-header-inner">
-        <a href="./visitor.php" class="post-back-link">
+        <a href="./visitor" class="post-back-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>

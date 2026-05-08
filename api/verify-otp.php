@@ -84,7 +84,7 @@ try {
     json_response(200, [
         'success' => true,
         'message' => 'OTP verified. Redirecting...',
-        'redirect' => './dashboard.php',
+        'redirect' => './dashboard',
     ]);
 } catch (Throwable $exception) {
     json_response(500, [

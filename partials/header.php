@@ -43,7 +43,7 @@
             </button>
 
             <div class="settings-dropdown__menu" id="settingsMenu" role="menu" aria-label="Settings menu">
-              <a href="./profile.php" class="settings-dropdown__item" role="menuitem">
+              <a href="./profile" class="settings-dropdown__item" role="menuitem">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                   <circle cx="12" cy="7" r="4"></circle>
@@ -78,7 +78,7 @@
         <p class="logout-modal__message">Are you sure you want to log out of your account?</p>
         <div class="logout-modal__actions">
           <button type="button" class="logout-modal__btn logout-modal__btn--cancel" id="logoutCancelBtn">Cancel</button>
-          <a href="./logout.php" class="logout-modal__btn logout-modal__btn--confirm">Log Out</a>
+          <a href="./logout" class="logout-modal__btn logout-modal__btn--confirm">Log Out</a>
         </div>
       </div>
     </div>

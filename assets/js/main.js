@@ -257,7 +257,7 @@ const verifyOtpCode = async () => {
     setFormNote(data.message || "OTP verified. Redirecting...");
 
     window.setTimeout(() => {
-      window.location.href = data.redirect || "./dashboard.php";
+      window.location.href = data.redirect || "./dashboard";
     }, 350);
   } catch {
     setFormNote("Unable to verify OTP right now. Please try again.", true);
@@ -752,7 +752,7 @@ loginForm.addEventListener("submit", async (event) => {
     setFormNote(data.message || "Login successful. Redirecting...");
 
     window.setTimeout(() => {
-      window.location.href = data.redirect || "./dashboard.php";
+      window.location.href = data.redirect || "./dashboard";
     }, 450);
   } catch (err) {
     if (err && err.name === "AbortError") {
